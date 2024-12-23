@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 const userServices = require("../services/user.services");
 const  {validationResult} = require("express-validator");
+const blackListTokenModel = require("../models/Blacklisttoken.model");
 module.exports.registerUser = async (req,res,next) => {
     try{
         const errors = validationResult(req);
@@ -45,8 +46,31 @@ module.exports.loginUser = async(req,res,next) => {
             return res.status(401).json({errors:[{msg:"Invalid Credentials"}]});
         }
         const token = user.generateAuthTOken();
+        res.cookie('token',token);
         res.status(200).json({token});
 
+    }catch(error){
+        next(error);
+    }
+}
+
+
+module.exports.getProfile = async(req,res,next) => {
+    try{
+        res.status(200).json(req.user);
+    }catch(error){
+        console.log(error);
+    }
+}
+
+module.exports.logout = async(req,res,next) => {
+    try{
+        res.clearCookie('token');
+        const token = req.cookies.token || req.header.authorization.split(' ')[ 1 ];
+        
+        await blackListTokenModel.create({token});
+
+        res.status(200).json({msg:"Logged out successfully"});
     }catch(error){
         next(error);
     }

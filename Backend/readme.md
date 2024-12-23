@@ -28,3 +28,20 @@
   "email": "required (valid email)",
   "password": "required (min length: 5)"
 }
+```
+
+## /users/profile
+**Method:** `GET`  
+**Endpoint:** `/users/profile`  
+**Description:** Returns the current user's profile.  
+**Response:**  
+- **200 OK**: Returns the user profile.  
+- **401 Unauthorized**
+
+## /users/logout
+**Method:** `GET`  
+**Endpoint:** `/users/logout`  
+**Description:** Logs the user out by clearing and blacklisting the token.  
+**Response:**  
+- **200 OK**: Returns a success message.  
+- **401 Unauthorized**
