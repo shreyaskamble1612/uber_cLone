@@ -14,3 +14,17 @@
   "email": "required (valid email)",
   "password": "required (min length: 8)"
 }
+```
+
+## /users/login
+
+**Method:** `POST`  
+**Endpoint:** `/users/login`  
+**Description:** Logs a user in using email and password.
+
+### Request Body
+```json
+{
+  "email": "required (valid email)",
+  "password": "required (min length: 5)"
+}
