@@ -16,6 +16,29 @@
 }
 ```
 
+## /captain/register
+**Method:** `POST`  
+**Endpoint:** `/captain/register`  
+**Description:** Registers a new captain.
+
+### Request Body
+```json
+{
+  "fullname": {
+    "firstname": "required (min length: 3)",
+    "lastname": "required (min length: 3)"
+  },
+  "email": "required (valid email)",
+  "password": "required (min length: 8)",
+  "vehicle": {
+    "color": "required (min length: 3)",
+    "plate": "required (min length: 3)",
+    "capacity": "required (number)",
+    "vehicleType": "required (car | motorcycle | auto)"
+  }
+}
+```
+
 ## /users/login
 
 **Method:** `POST`  
