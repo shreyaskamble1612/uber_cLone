@@ -16,12 +16,11 @@
 }
 ```
 
-## /captain/register
+## /captains/register
 **Method:** `POST`  
-**Endpoint:** `/captain/register`  
-**Description:** Registers a new captain.
-
-### Request Body
+**Endpoint:** `/captains/register`  
+**Description:** Registers a new captain.  
+**Request Body:**  
 ```json
 {
   "fullname": {
