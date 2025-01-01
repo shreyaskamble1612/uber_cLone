@@ -36,7 +36,6 @@ const App = () => {
           }
         />
 
-{/*         
         <Route
           path="/user/logout"
           element={
@@ -60,7 +59,7 @@ const App = () => {
               <CaptainLogout />
             </CaptainProtectWrapper>
           }
-        /> */}
+        />
       </Routes>
     </div>
   );
