@@ -9,7 +9,7 @@ const LocationSearchPanel = ({ suggestions, setVehiclePanel, setPanelOpen, setPi
             setDestination(suggestion)
         }
         // setVehiclePanel(true)
-        // setPanelOpen(false)
+        // setPanelOpen(false) 
     }
 
     return (
